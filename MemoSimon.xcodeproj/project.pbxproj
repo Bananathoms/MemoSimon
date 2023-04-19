@@ -14,6 +14,7 @@
 		DEC5187329EF744B00BF7535 /* MemoSimonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5187229EF744B00BF7535 /* MemoSimonTests.swift */; };
 		DEC5187D29EF744B00BF7535 /* MemoSimonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5187C29EF744B00BF7535 /* MemoSimonUITests.swift */; };
 		DEC5187F29EF744B00BF7535 /* MemoSimonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5187E29EF744B00BF7535 /* MemoSimonUITestsLaunchTests.swift */; };
+		DEC5188D29EF74D500BF7535 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5188C29EF74D500BF7535 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		DEC5187829EF744B00BF7535 /* MemoSimonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoSimonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC5187C29EF744B00BF7535 /* MemoSimonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoSimonUITests.swift; sourceTree = "<group>"; };
 		DEC5187E29EF744B00BF7535 /* MemoSimonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoSimonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DEC5188C29EF74D500BF7535 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		DEC5186029EF744A00BF7535 /* MemoSimon */ = {
 			isa = PBXGroup;
 			children = (
+				DEC5188B29EF74B000BF7535 /* View */,
 				DEC5186129EF744A00BF7535 /* MemoSimonApp.swift */,
 				DEC5186329EF744B00BF7535 /* ContentView.swift */,
 				DEC5186529EF744B00BF7535 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				DEC5187E29EF744B00BF7535 /* MemoSimonUITestsLaunchTests.swift */,
 			);
 			path = MemoSimonUITests;
+			sourceTree = "<group>";
+		};
+		DEC5188B29EF74B000BF7535 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5188C29EF74D500BF7535 /* GameView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC5186429EF744B00BF7535 /* ContentView.swift in Sources */,
+				DEC5188D29EF74D500BF7535 /* GameView.swift in Sources */,
 				DEC5186229EF744A00BF7535 /* MemoSimonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
