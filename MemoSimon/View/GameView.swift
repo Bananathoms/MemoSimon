@@ -23,6 +23,7 @@ struct GameView: View {
                     Color.red
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
+                        .overlay(viewModel.highlightedColor == "red" ? Color.white.opacity(0.5) : Color.clear)
                 }.tag("red")
                 
                 Button {
@@ -32,6 +33,7 @@ struct GameView: View {
                     Color.blue
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
+                        .overlay(viewModel.highlightedColor == "blue" ? Color.white.opacity(0.5) : Color.clear)
                 }.tag("blue")
             }
             
@@ -43,6 +45,7 @@ struct GameView: View {
                     Color.green
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
+                        .overlay(viewModel.highlightedColor == "green" ? Color.white.opacity(0.5) : Color.clear)
                 }.tag("green")
                 
                 Button {
@@ -52,6 +55,7 @@ struct GameView: View {
                     Color.yellow
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
+                        .overlay(viewModel.highlightedColor == "yellow" ? Color.white.opacity(0.5) : Color.clear)
                 }.tag("yellow")
                 
             }
