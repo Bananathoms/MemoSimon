@@ -9,7 +9,41 @@ import SwiftUI
 
 struct GameView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20){
+            HStack(spacing: 20) {
+                Button {
+                    print("red")
+                } label: {
+                    Color.red
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(5)
+                }
+                Button {
+                    print("blue")
+                } label: {
+                    Color.blue
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(5)
+                }
+            }
+            HStack(spacing: 20) {
+                Button {
+                    print("green")
+                } label: {
+                    Color.green
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(5)
+                }
+                Button {
+                    print("yellow")
+                } label: {
+                    Color.yellow
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(5)
+                }
+            }
+        }
+
     }
 }
 
