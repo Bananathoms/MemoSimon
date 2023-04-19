@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE24501A29F031B60022CCCE /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24501929F031B50022CCCE /* GameViewModel.swift */; };
+		DE24647729F00787002DD4C6 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24647629F00787002DD4C6 /* GameModel.swift */; };
 		DEC5186229EF744A00BF7535 /* MemoSimonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5186129EF744A00BF7535 /* MemoSimonApp.swift */; };
 		DEC5186429EF744B00BF7535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5186329EF744B00BF7535 /* ContentView.swift */; };
 		DEC5186629EF744B00BF7535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC5186529EF744B00BF7535 /* Assets.xcassets */; };
@@ -15,7 +17,6 @@
 		DEC5187D29EF744B00BF7535 /* MemoSimonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5187C29EF744B00BF7535 /* MemoSimonUITests.swift */; };
 		DEC5187F29EF744B00BF7535 /* MemoSimonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5187E29EF744B00BF7535 /* MemoSimonUITestsLaunchTests.swift */; };
 		DEC5188D29EF74D500BF7535 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5188C29EF74D500BF7535 /* GameView.swift */; };
-		DEC5189029EF7A6E00BF7535 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5188F29EF7A6E00BF7535 /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE24501929F031B50022CCCE /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		DE24647629F00787002DD4C6 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		DEC5185E29EF744A00BF7535 /* MemoSimon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoSimon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC5186129EF744A00BF7535 /* MemoSimonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoSimonApp.swift; sourceTree = "<group>"; };
 		DEC5186329EF744B00BF7535 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,7 +50,6 @@
 		DEC5187C29EF744B00BF7535 /* MemoSimonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoSimonUITests.swift; sourceTree = "<group>"; };
 		DEC5187E29EF744B00BF7535 /* MemoSimonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoSimonUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DEC5188C29EF74D500BF7535 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		DEC5188F29EF7A6E00BF7535 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		DEC5186029EF744A00BF7535 /* MemoSimon */ = {
 			isa = PBXGroup;
 			children = (
+				DEC5189129EF7E3200BF7535 /* ViewModel */,
 				DEC5188E29EF7A5400BF7535 /* Model */,
 				DEC5188B29EF74B000BF7535 /* View */,
 				DEC5186129EF744A00BF7535 /* MemoSimonApp.swift */,
@@ -144,9 +147,17 @@
 		DEC5188E29EF7A5400BF7535 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DEC5188F29EF7A6E00BF7535 /* GameModel.swift */,
+				DE24647629F00787002DD4C6 /* GameModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DEC5189129EF7E3200BF7535 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DE24501929F031B50022CCCE /* GameViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,8 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC5186429EF744B00BF7535 /* ContentView.swift in Sources */,
-				DEC5189029EF7A6E00BF7535 /* GameModel.swift in Sources */,
+				DE24647729F00787002DD4C6 /* GameModel.swift in Sources */,
 				DEC5188D29EF74D500BF7535 /* GameView.swift in Sources */,
+				DE24501A29F031B60022CCCE /* GameViewModel.swift in Sources */,
 				DEC5186229EF744A00BF7535 /* MemoSimonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
