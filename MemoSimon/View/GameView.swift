@@ -13,7 +13,7 @@ struct GameView: View {
     
     var body: some View {
         VStack(spacing: 20){
-
+            
             
             HStack(spacing: 20) {
                 Button {
@@ -59,15 +59,28 @@ struct GameView: View {
                 }.tag("yellow")
                 
             }
-            Button {
-                viewModel.startNewGame()
-                
-            } label: {
-                Text("Nouveau")
-            }.background(.black)
+            if viewModel.gameState == .ready {
+                Button(action: {
+                    viewModel.startNewGame()
+                }, label: {
+                    Text("Nouveau")
+                })
+                .background(.black)
                 .foregroundColor(.white)
-                .tag("new")
+            } else if viewModel.gameState == .showingSequence {
+                Text("Mémorisez la séquence...")
+            } else if viewModel.gameState == .userTurn {
+                Text("À vous de jouer!")
+            } else if viewModel.gameState == .gameOver {
+                Text("Game over!")
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            viewModel.gameState = .ready
+                        }
+                    }
+            }
         }
+        
     }
 }
 

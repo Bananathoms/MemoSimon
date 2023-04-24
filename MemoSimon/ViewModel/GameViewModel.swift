@@ -26,14 +26,12 @@ class GameViewModel: ObservableObject {
     
     func startNewGame() {
         gameState = .showingSequence
-        sequence = []
-        currentIndex = 0
-        
-        for _ in 1...5 {
-            let randomIndex = Int.random(in: 0..<colors.count)
-            sequence.append(colors[randomIndex])
+        if gameState == .ready {
+            sequence = [colors.randomElement()!]
+        } else {
+            sequence.append(colors.randomElement()!)
         }
-        
+        currentIndex = 0
         showSequence()
     }
     
@@ -58,6 +56,9 @@ class GameViewModel: ObservableObject {
             selectedColor = color
             if selectedColor != sequence[currentIndex] {
                 gameState = .gameOver
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.gameState = .ready
+                }
             } else {
                 currentIndex += 1
                 if currentIndex >= sequence.count {
@@ -69,6 +70,14 @@ class GameViewModel: ObservableObject {
                     }
                 }
             }
+        }
+    }
+    
+    func gameOver() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.gameState = .ready
+            self.selectedColor = nil
+            self.highlightedColor = nil
         }
     }
 }
