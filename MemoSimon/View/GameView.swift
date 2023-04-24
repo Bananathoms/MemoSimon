@@ -10,10 +10,15 @@ import SwiftUI
 struct GameView: View {
 
     @StateObject var viewModel = GameViewModel()
+
     
     var body: some View {
         VStack(spacing: 20){
-            
+            HStack(spacing: 50){
+                Text("Score: \(viewModel.score)")
+                Text("Record: \(viewModel.highScore)")
+                    .foregroundColor(viewModel.isHighScoreBeaten ? .green : .black)
+            }
             
             HStack(spacing: 20) {
                 Button {
@@ -24,7 +29,7 @@ struct GameView: View {
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
                         .overlay(viewModel.highlightedColor == "red" ? Color.white.opacity(0.5) : Color.clear)
-                }.tag("red")
+                }
                 
                 Button {
                     print("blue")
@@ -34,7 +39,7 @@ struct GameView: View {
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
                         .overlay(viewModel.highlightedColor == "blue" ? Color.white.opacity(0.5) : Color.clear)
-                }.tag("blue")
+                }
             }
             
             HStack(spacing: 20) {
@@ -46,7 +51,7 @@ struct GameView: View {
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
                         .overlay(viewModel.highlightedColor == "green" ? Color.white.opacity(0.5) : Color.clear)
-                }.tag("green")
+                }
                 
                 Button {
                     print("yellow")
@@ -56,9 +61,9 @@ struct GameView: View {
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
                         .overlay(viewModel.highlightedColor == "yellow" ? Color.white.opacity(0.5) : Color.clear)
-                }.tag("yellow")
-                
+                }
             }
+            
             if viewModel.gameState == .ready {
                 Button(action: {
                     viewModel.startNewGame()
@@ -80,7 +85,6 @@ struct GameView: View {
                     }
             }
         }
-        
     }
 }
 

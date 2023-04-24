@@ -19,6 +19,9 @@ class GameViewModel: ObservableObject {
     @Published var gameState: GameState = .ready
     @Published var selectedColor: String?
     @Published var highlightedColor: String?
+    @Published var score = 0
+    @Published var highScore = 0
+    @Published var isHighScoreBeaten: Bool = false
     
     private let colors = ["red", "blue", "green", "yellow"]
     private var sequence = [String]()
@@ -58,9 +61,17 @@ class GameViewModel: ObservableObject {
                 gameState = .gameOver
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.gameState = .ready
+                    self.score = 0
+                    self.isHighScoreBeaten = false
+                    self.sequence = []
                 }
             } else {
                 currentIndex += 1
+                self.score += 1
+                if self.score > self.highScore {
+                    self.highScore = self.score
+                    self.isHighScoreBeaten = true
+                }
                 if currentIndex >= sequence.count {
                     gameState = .showingSequence
                     selectedColor = nil
@@ -70,14 +81,6 @@ class GameViewModel: ObservableObject {
                     }
                 }
             }
-        }
-    }
-    
-    func gameOver() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.gameState = .ready
-            self.selectedColor = nil
-            self.highlightedColor = nil
         }
     }
 }
