@@ -22,7 +22,6 @@ struct GameView: View {
             
             HStack(spacing: 20) {
                 Button {
-                    print("red")
                     viewModel.selectColor("red")
                 } label: {
                     Color.red
@@ -30,9 +29,9 @@ struct GameView: View {
                         .cornerRadius(5)
                         .overlay(viewModel.highlightedColor == "red" ? Color.white.opacity(0.5) : Color.clear)
                 }
+                .disabled(viewModel.gameState != .userTurn)
                 
                 Button {
-                    print("blue")
                     viewModel.selectColor("blue")
                 } label: {
                     Color.blue
@@ -41,10 +40,10 @@ struct GameView: View {
                         .overlay(viewModel.highlightedColor == "blue" ? Color.white.opacity(0.5) : Color.clear)
                 }
             }
+            .disabled(viewModel.gameState != .userTurn)
             
             HStack(spacing: 20) {
                 Button {
-                    print("green")
                     viewModel.selectColor("green")
                 } label: {
                     Color.green
@@ -52,9 +51,9 @@ struct GameView: View {
                         .cornerRadius(5)
                         .overlay(viewModel.highlightedColor == "green" ? Color.white.opacity(0.5) : Color.clear)
                 }
+                .disabled(viewModel.gameState != .userTurn)
                 
                 Button {
-                    print("yellow")
                     viewModel.selectColor("yellow")
                 } label: {
                     Color.yellow
@@ -62,6 +61,7 @@ struct GameView: View {
                         .cornerRadius(5)
                         .overlay(viewModel.highlightedColor == "yellow" ? Color.white.opacity(0.5) : Color.clear)
                 }
+                .disabled(viewModel.gameState != .userTurn)
             }
             
             if viewModel.gameState == .ready {
