@@ -60,20 +60,14 @@ struct GameView: View {
                 
             }
             Button {
-                print("new")
-                viewModel.selectColor(viewModel.randomColor())
+                viewModel.startNewGame()
                 
             } label: {
                 Text("Nouveau")
             }.background(.black)
                 .foregroundColor(.white)
                 .tag("new")
-            
-            if let selectedColor = viewModel.selectedColor {
-                            Text("Couleur sélectionnée: \(selectedColor)")
-                        }
         }
-
     }
 }
 
