@@ -10,19 +10,19 @@ import SwiftUI
 struct GameView: View {
 
     @StateObject var viewModel = GameViewModel()
-
     
     var body: some View {
         VStack(spacing: 20){
             HStack(spacing: 50){
                 Text("Score: \(viewModel.score)")
                 Text("Record: \(viewModel.highScore)")
-                    .foregroundColor(viewModel.isHighScoreBeaten ? .green : .black)
+                    .foregroundColor(viewModel.isHighScoreBeaten ? .green : Color.primary)
             }
             
             HStack(spacing: 20) {
                 Button {
                     viewModel.selectColor("red")
+                    viewModel.playSound(name: "red")
                 } label: {
                     Color.red
                         .frame(width: 150, height: 150)
@@ -33,6 +33,7 @@ struct GameView: View {
                 
                 Button {
                     viewModel.selectColor("blue")
+                    viewModel.playSound(name: "blue")
                 } label: {
                     Color.blue
                         .frame(width: 150, height: 150)
@@ -45,6 +46,7 @@ struct GameView: View {
             HStack(spacing: 20) {
                 Button {
                     viewModel.selectColor("green")
+                    viewModel.playSound(name: "green")
                 } label: {
                     Color.green
                         .frame(width: 150, height: 150)
@@ -55,6 +57,7 @@ struct GameView: View {
                 
                 Button {
                     viewModel.selectColor("yellow")
+                    viewModel.playSound(name: "yellow")
                 } label: {
                     Color.yellow
                         .frame(width: 150, height: 150)
@@ -70,8 +73,8 @@ struct GameView: View {
                 }, label: {
                     Text("Nouveau")
                 })
-                .background(.black)
-                .foregroundColor(.white)
+                .background(Color.secondary)
+                .foregroundColor(Color.primary)
             } else if viewModel.gameState == .showingSequence {
                 Text("Mémorisez la séquence...")
             } else if viewModel.gameState == .userTurn {

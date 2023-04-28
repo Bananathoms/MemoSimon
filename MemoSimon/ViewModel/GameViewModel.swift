@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class GameViewModel: ObservableObject {
     
@@ -21,11 +22,25 @@ class GameViewModel: ObservableObject {
     @Published var highlightedColor: String?
     @Published var score = 0
     @Published var highScore = 0
-    @Published var isHighScoreBeaten: Bool = false
+    @Published var isHighScoreBeaten = false
     
     private let colors = ["red", "blue", "green", "yellow"]
     private var sequence = [String]()
     private var currentIndex = 0
+    
+    var audioPlayer: AVAudioPlayer?
+    
+    func playSound(name: String) {
+        guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") else {
+            print("Erreur : impossible de trouver le fichier mp3")
+            return }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        } catch let error {
+            print("Error playing sound: \(error.localizedDescription)")
+        }
+    }
     
     func startNewGame() {
         gameState = .showingSequence
@@ -41,9 +56,13 @@ class GameViewModel: ObservableObject {
     private func showSequence() {
         if currentIndex < sequence.count {
             highlightedColor = sequence[currentIndex]
+            if let color = self.highlightedColor {
+                self.playSound(name: color)
+            }
             currentIndex += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.highlightedColor = nil
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.showSequence()
                 }
