@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE24501A29F031B60022CCCE /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24501929F031B50022CCCE /* GameViewModel.swift */; };
 		DE24647729F00787002DD4C6 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24647629F00787002DD4C6 /* GameModel.swift */; };
+		DE26E2EF2A01DAB800B20320 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE26E2EE2A01DAB800B20320 /* HomeView.swift */; };
 		DE43749F29FB506D00935DC4 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = DE43749E29FB506D00935DC4 /* Sounds */; };
 		DE4374A429FB527400935DC4 /* blue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DE4374A029FB527400935DC4 /* blue.mp3 */; };
 		DE4374A529FB527400935DC4 /* red.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DE4374A129FB527400935DC4 /* red.mp3 */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		DE24501929F031B50022CCCE /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		DE24647629F00787002DD4C6 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		DE26E2EE2A01DAB800B20320 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DE43749E29FB506D00935DC4 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		DE4374A029FB527400935DC4 /* blue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = blue.mp3; path = MemoSimon/Sounds/blue.mp3; sourceTree = "<group>"; };
 		DE4374A129FB527400935DC4 /* red.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = red.mp3; path = MemoSimon/Sounds/red.mp3; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC5188C29EF74D500BF7535 /* GameView.swift */,
+				DE26E2EE2A01DAB800B20320 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				DEC5186429EF744B00BF7535 /* ContentView.swift in Sources */,
 				DE24647729F00787002DD4C6 /* GameModel.swift in Sources */,
 				DEC5188D29EF74D500BF7535 /* GameView.swift in Sources */,
+				DE26E2EF2A01DAB800B20320 /* HomeView.swift in Sources */,
 				DE24501A29F031B60022CCCE /* GameViewModel.swift in Sources */,
 				DEC5186229EF744A00BF7535 /* MemoSimonApp.swift in Sources */,
 			);

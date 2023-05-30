@@ -71,7 +71,8 @@ struct GameView: View {
                 Button(action: {
                     viewModel.startNewGame()
                 }, label: {
-                    Text("Nouveau")
+                    Text("Démarrer")
+                        .font(.largeTitle)
                 })
                 .background(Color.secondary)
                 .foregroundColor(Color.primary)
